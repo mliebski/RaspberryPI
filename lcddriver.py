@@ -101,4 +101,11 @@ class lcd:
         def lcd_clear(self):
                 self.lcd_write(LCD_CLEARDISPLAY)
                 self.lcd_write(LCD_RETURNHOME)
+        #switch backlight off
+        def lcd_backlight(self, state):
+                if state == 1:
+                        self.lcd_device.write_cmd(LCD_BACKLIGHT)
+
+                if state == 0:
+                        self.lcd_device.write_cmd(LCD_NOBACKLIGHT)
 
